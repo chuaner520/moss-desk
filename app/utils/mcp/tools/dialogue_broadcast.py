@@ -10,6 +10,7 @@ def get_desc():
     except Exception as e:
         print(f"读取描述失败: {e}")
         return "全球播报工具，描述加载失败。"
+        
 
 def register_tool(mcp):
     desc = get_desc()
