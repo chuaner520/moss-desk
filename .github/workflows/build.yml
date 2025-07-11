@@ -1,0 +1,44 @@
+name: Build DeskMoss for All Platforms
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt pyinstaller
+      - name: Build Windows exe
+        run: pyinstaller -F -w -n DeskMoss --icon=favicon.ico app/main.py
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: DeskMoss-windows
+          path: dist/DeskMoss.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt pyinstaller
+      - name: Build macOS app
+        run: pyinstaller -F -w -n DeskMoss --icon=favicon.icns app/main.py
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: DeskMoss-macos
+          path: dist/DeskMoss 

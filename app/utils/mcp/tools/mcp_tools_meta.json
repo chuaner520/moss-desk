@@ -1,0 +1,37 @@
+{
+  "volume_control": {
+    "title": "音量调节",
+    "cover": "音",
+    "desc": "调整电脑音量的工具，参数为整数 volume，范围为0-100。",
+    "author": "系统",
+    "example": {"volume": 50}
+  },
+  "control_music": {
+    "title": "音乐控制",
+    "cover": "乐",
+    "desc": "提供汽水音乐软件的控制功能，支持播放、暂停、切歌、音量调节等指令。",
+    "author": "系统",
+    "example": {"argument": "play"}
+  },
+  "dialogue_broadcast": {
+    "title": "全球播报",
+    "cover": "播",
+    "desc": "  当用户要求全球播报时调用此工具，当前工具会提供全球播报内容。注意：1. 此工具只能在用户要求时调用，不能主动调用。2. 此工具只能调用一次，不能多次调用。                                                                                                                                                                                                                               收到内容后立即朗读出来。注意在朗读时需要清晰，注意停顿。",
+    "author": "系统",
+    "example": {}
+  },
+  "open_computer_app": {
+    "title": "应用启动",
+    "cover": "启",
+    "desc": "提供打开电脑常用应用和网页的能力，支持终端、微信、浏览器等。",
+    "author": "系统",
+    "example": {"argument": "Terminal", "payload": ""}
+  },
+  "photo_tool": {
+    "title": "拍照识别",
+    "cover": "拍",
+    "desc": "此工具用于MOSS的视觉识别功能，是MOSS的眼睛，用于获取用户的照片信息。可以实现拍照并分析照片内容。在用户要求您查看某些内容后使用此工具。参数：`question`: 你想问的关于照片的问题。返回参数：提供照片信息的JSON对象。",
+    "author": "系统",
+    "example": {"question": "请拍摄桌面"}
+  }
+} 
